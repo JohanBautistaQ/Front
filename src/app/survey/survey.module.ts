@@ -6,7 +6,7 @@ import { SurveyComponent } from './survey.component';
   imports: [
     CommonModule
   ],
-  declarations: [SurveyComponent],
-  exports: [SurveyComponent]
+  declarations: [],
+  exports: []
 })
 export class SurveyModule { }

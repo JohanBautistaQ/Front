@@ -3,7 +3,7 @@ export interface SurveyQuestion {
     statement: string;
     associated_risk: string;
     type_question: TypeQuestion;
-    questionConfig: any; 
+    question_config: any; 
   }
   
   export enum TypeQuestion {
