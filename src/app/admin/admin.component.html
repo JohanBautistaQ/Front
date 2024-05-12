@@ -1,6 +1,5 @@
-<!-- admin.component.html -->
 <div class="container">
-  <h2>Create New Survey Question</h2>
+  <h2>Create New Question</h2>
   <form [formGroup]="questionForm" (ngSubmit)="submitQuestion()">
     <div class="form-group">
       <label for="statement">Statement:</label>
@@ -24,6 +23,6 @@
       <label for="questionConfig">Question Configuration (JSON):</label>
       <textarea id="questionConfig" class="form-control" formControlName="question_config" rows="5"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Create Question</button>
+    <button type="submit" class="btn">Create Question</button>
   </form>
 </div>
