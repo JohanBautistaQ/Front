@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 import { SurveyComponent } from './survey/survey.component';
 import { LoginComponent } from './login/login.component';
 import { SurveyApiService } from './survey/surveyApi.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [				
+  declarations: [					
     AppComponent,
       SurveyComponent,
       LoginComponent,
+      DashboardComponent
    ],
   imports: [
     BrowserModule,
