@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SurveyComponent } from './survey/survey.component';
 import { LoginComponent } from './login/login.component';
+import { SurveyApiService } from './survey/surveyApi.service';
 
 @NgModule({
   declarations: [				
@@ -22,7 +23,7 @@ import { LoginComponent } from './login/login.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [SurveyApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
