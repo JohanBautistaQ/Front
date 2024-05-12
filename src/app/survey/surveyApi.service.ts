@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
-const baseUrl = 'http://34.135.101.126:8080/survey_questions/';
+const baseUrl = 'http://34.27.189.110:8080/survey_questions/';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ constructor(private http: HttpClient ) { }
   }
 
   sendResponses(responses: any): Observable<any> {
-    const url = 'http://34.135.101.126:8080/survey_responses/'; // URL para enviar las respuestas
+    const url = 'http://34.27.189.110:8080/survey_responses/massive/'; // URL para enviar las respuestas
     return this.http.post<any>(url, responses);
     
   }

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SurveyComponent } from './survey.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -8,7 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ReactiveFormsModule
   ],
-  declarations: [SurveyComponent],
-  exports: [SurveyComponent]
+  declarations: [],
+  exports: []
 })
 export class SurveyModule { }
