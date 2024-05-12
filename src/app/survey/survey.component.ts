@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SurveyQuestion } from './surveyQuestion';
 import { SurveyApiService } from './surveyApi.service';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +13,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class SurveyComponent implements OnInit {
   questions: Array<SurveyQuestion> = [];
   formData = new FormGroup({
-
     respondent: new FormControl(''),
     survey_consolidated: new FormControl(''),
     survey_question: new FormControl(''),

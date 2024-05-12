@@ -8,7 +8,7 @@ const baseUrl = 'http://34.135.101.126:8080/survey_questions/';
 
 @Injectable({
   providedIn: 'root'
-})
+})  
 export class SurveyApiService {
 constructor(private http: HttpClient ) { }
   getAll(): Observable<SurveyQuestion[]> {
@@ -21,4 +21,7 @@ constructor(private http: HttpClient ) { }
     
   }
 
+create(questionData: any): Observable<any> {
+  return this.http.post(baseUrl, questionData);
+}
 }

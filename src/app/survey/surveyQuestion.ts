@@ -1,7 +1,7 @@
 export interface SurveyQuestion {
     id: number;
     statement: string;
-    associated_risk: string;
+    asociated_risk: string;
     type_question: TypeQuestion;
     question_config: any; 
   }
