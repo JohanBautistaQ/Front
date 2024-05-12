@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -14,14 +15,13 @@ export class LoginComponent implements OnInit {
     password: new FormControl(''),
   });
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private toastr: ToastrService) { }
 
   onSubmit(): void {
-    this.http.post('http://34.135.101.126:8080/companies/login', this.loginForm.value).subscribe({
-      next: (response: any) => console.log('Login successful', response),
-      error: (error: any) => console.log('Error', error)
+    this.http.post('http://localhost:8080/companies/login', this.loginForm.value).subscribe({
+      next: (response: any) => this.toastr.success('Login successful!', 'Status'),
+      error: (error: any) => this.toastr.error('Invalid user', 'Status'),
     });
-    console.log(this.loginForm.value)
   }
   
   ngOnInit() {
