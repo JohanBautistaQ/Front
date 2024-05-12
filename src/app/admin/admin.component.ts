@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { SurveyApiService } from '../survey/surveyApi.service';
 
 @Component({
@@ -12,17 +12,24 @@ export class AdminComponent implements OnInit {
   [x: string]: any;
 
 
-  questionForm!: FormGroup;
+  // questionForm!: FormGroup;
+  questionForm = new FormGroup({
+    statement: new FormControl(''),
+    asociated_risk: new FormControl(''),
+    type_question: new FormControl(''),
+    question_config: new FormControl(''),
+  });
 
   constructor(private fb: FormBuilder, private surveyApiService: SurveyApiService) { }
 
   ngOnInit() {
-    this.questionForm = this.fb.group({
-      statement: ['', Validators.required],
-      asociated_risk: [''],
-      type_question: ['', Validators.required],
-      question_config: ['', Validators.required]
-    });
+    // this.questionForm = this.fb.group({
+    //   statement: ['', Validators.required],
+    //   asociated_risk: [''],
+    //   type_question: ['', Validators.required],
+    //   question_config: ['', Validators.required]
+    // });
+    
   }
 
   submitQuestion() {

@@ -11,13 +11,15 @@ import { SurveyComponent } from './survey/survey.component';
 import { LoginComponent } from './login/login.component';
 import { SurveyApiService } from './survey/surveyApi.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [					
     AppComponent,
       SurveyComponent,
       LoginComponent,
-      DashboardComponent
+      DashboardComponent,
+      AdminComponent
    ],
   imports: [
     BrowserModule,

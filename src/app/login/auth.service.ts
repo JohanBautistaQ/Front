@@ -26,12 +26,12 @@ login(credentials: FormGroup) {
 
 logout() {
   localStorage.removeItem('isLoggedIn');  // Limpiar el indicador al cerrar sesión
-  this.router.navigate(['/admin']);  // Navegar al Dashboard
+  this.router.navigate(['/login']);  // Navegar al login
   // Manejar la lógica de logout
 }
 
 isLoggedIn(): boolean {
-  return localStorage.getItem('isLoggedIn') === 'true';
+  return !!localStorage.getItem('isLoggedIn');
 }
 
 }

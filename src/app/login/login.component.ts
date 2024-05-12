@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl(''),
   });
 
-  constructor(private http: HttpClient,private authService: AuthService) { }
+  constructor(private http: HttpClient,private authService: AuthService, private route: Router) { }
 
   onSubmit(): void {
     this.authService.login(this.loginForm);
@@ -29,7 +29,11 @@ export class LoginComponent implements OnInit {
   }
   
   ngOnInit() {
-    this.authService.logout();
+    if (!this.authService.isLoggedIn()) {
+      this.authService.logout(); // Redirigir al dashboard si ya está logueado.
+    } else {
+      this.route.navigate(['/dashboard']);
+    }
   }
 
 }
