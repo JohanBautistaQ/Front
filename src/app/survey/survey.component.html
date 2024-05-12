@@ -50,3 +50,51 @@
 
 
   
+  <ul>
+    <li *ngFor="let question of questions">
+      <h3>{{ question.statement }}</h3>
+      <p>Riesgo asociado: {{ question.asociated_risk }}</p>
+      <p>Tipo de pregunta: {{ question.type_question }}</p>
+      <div *ngIf="question.type_question === 'NUMERIC'">
+        <!-- Contenido específico para preguntas numéricas -->
+        <!-- <p>Configuración de la pregunta: {{ question.questionConfig.scores_schema | json }}</p> -->
+        <!-- Contenido específico para preguntas numéricas -->
+        <!-- <p>Configuración de la pregunta:</p>
+        <ul>
+          <li *ngFor="let keyValuePair of question.questionConfig.scores_schema | keyvalue">
+            Key: {{ keyValuePair.key }}, Value: {{ keyValuePair.value }}
+          </li>
+        </ul> -->
+      </div>
+      <div *ngIf="question.type_question === 'PERCENTAGE'">
+        <!-- Contenido específico para preguntas de porcentaje -->
+        <p>
+          Configuración de la pregunta:
+          {{ question.questionConfig["scores_schema"] | json }}
+        </p>
+      </div>
+      <div *ngIf="question.type_question === 'SELECT'">
+        <!-- Contenido específico para preguntas de selección -->
+        <p>
+          Configuración de la pregunta:
+          {{ question.questionConfig["scores_schema"] | json }}
+        </p>
+      </div>
+      <div *ngIf="question.type_question === 'TEXT'">
+        <!-- Contenido específico para preguntas de texto -->
+        <p>
+          Configuración de la pregunta:
+          {{ question.questionConfig["scores_schema"] | json }}
+        </p>
+      </div>
+
+      <div *ngIf="question.type_question === 'YES_NO'">
+        <!-- Contenido específico para preguntas de sí/no -->
+        <p>
+          Configuración de la pregunta:
+          {{ question.questionConfig["scores_schema"] | json }}
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
