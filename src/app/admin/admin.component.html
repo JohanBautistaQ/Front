@@ -1,14 +1,24 @@
-<!-- admin.component.html -->
 <div class="container">
-  <h2>Create New Survey Question</h2>
+  <h2>Create New Question</h2>
   <form [formGroup]="questionForm" (ngSubmit)="submitQuestion()">
     <div class="form-group">
       <label for="statement">Statement:</label>
-      <input type="text" id="statement" class="form-control" formControlName="statement" required>
+      <input
+        type="text"
+        id="statement"
+        class="form-control"
+        formControlName="statement"
+        required
+      />
     </div>
     <div class="form-group">
       <label for="asociatedRisk">Associated Risk:</label>
-      <input type="text" id="asociatedRisk" class="form-control" formControlName="asociated_risk">
+      <input
+        type="text"
+        id="asociatedRisk"
+        class="form-control"
+        formControlName="asociated_risk"
+      />
     </div>
     <div class="form-group">
       <label for="typeQuestion">Type of Question:</label>
@@ -22,8 +32,13 @@
     </div>
     <div class="form-group">
       <label for="questionConfig">Question Configuration (JSON):</label>
-      <textarea id="questionConfig" class="form-control" formControlName="question_config" rows="5"></textarea>
+      <textarea
+        id="questionConfig"
+        class="form-control"
+        formControlName="question_config"
+        rows="5"
+      ></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Create Question</button>
+    <button type="submit" class="btn">Create Question</button>
   </form>
 </div>

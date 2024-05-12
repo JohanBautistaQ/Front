@@ -35,8 +35,9 @@ input {
 
 
 button{
-    padding: 0.5em;
+    padding: 0.8em;
     width: 100%;
+    border: none;
     background-color: #03045e;
     color: white;
     font-family: "Roboto", sans-serif;
