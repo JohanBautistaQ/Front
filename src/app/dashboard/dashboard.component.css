@@ -87,11 +87,14 @@
 
 #viewPrincipal .side {
     flex-grow:1;
-    display: inline-block;
+    /* display: inline-block; */
     /* background-color: #000028; */
+    display: flex;
+    flex-direction: column;
     padding: 2em;
     border-radius: 8px;
     width: 0.5%;
+    max-height: 10%;
 }
 
 #viewPrincipal .side .sidenote {
@@ -103,7 +106,6 @@
     line-height: 1.5em;
     border-radius: 8px;
     overflow: hidden;
-    height: 70%;
     margin-bottom: 1em;
 }
 
@@ -152,3 +154,21 @@
     font-weight: 0%;
     color: #7a7a8e;
 }
+
+#sideTitulo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+/* #viewPrincipal .sidenote #sideTitulo i {
+    font-size: 2em;
+}
+
+#viewPrincipal .sidenote #sideTitulo p{
+    font-size: medium;
+} */
+
+
+/* #viewPrincipal .sidenote p{
+    font-size: 1em;
+} */
