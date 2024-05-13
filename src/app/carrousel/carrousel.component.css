@@ -1,66 +1,9 @@
-.carousel-item {
-    height: 500px;  /* Ajusta la altura según tus necesidades */
-    width: 100%;  /* Opcional, dependiendo de si quieres un ancho fijo o responsivo */
-  }
+i {
+  background-color: #000028;
+}
 
-  .carousel-item {
-    min-height: 100px; /* Ajusta esto según la altura máxima esperada del texto */
-  }
-  
-  #grafica {
-    min-height: 800px; /* Asegura que el área del gráfico tenga suficiente espacio */
-  }
-  
-  
-  .carousel-item .d-flex {
-    height: 100%;  /* Esto asegura que el contenido dentro del slide también tome la altura completa */
-  }
-  app-carrousel {
-    width: 50%; /* Asegura que el carrusel ocupe todo el espacio disponible */
-    height: auto; /* Mantiene la proporción del gráfico */
-  }
-  
+::ng-deep.fixed-size-graph{
+  width: 300px; /* Ancho fijo */
+  height: 200px; /* Altura fija */
+}
 
-  .carousel-item .text-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;  /* Centra verticalmente el contenido en el slide */
-    align-items: start;      /* Centra horizontalmente el contenido en el slide */
-    height: 100%;
-  }
-
-  .carousel-item {
-    background-size: cover;  /* Asegura que la imagen de fondo cubra todo el slide */
-    background-position: center;  /* Centra la imagen de fondo en el slide */
-  }
-
-  .carousel-item h5 {
-    font-size: 1.2em;  /* Tamaño uniforme para los títulos */
-    overflow: hidden;  /* Oculta texto que excede el área visible */
-    text-overflow: ellipsis;  /* Añade puntos suspensivos si el texto es demasiado largo */
-     /* Mantiene el texto en una sola línea */
-    text-align: start;
-  }
-
-  #resumen {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Esto centra el contenido verticalmente */
-  }
-  
-  #grafica, #sideNote {
-    flex: 1; /* Esto da igual espacio a la gráfica y a la nota lateral */
-  }
-
-  .carousel-item h1, .carousel-item p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .carousel-item {
-    padding: 20px;
-    box-sizing: border-box; /* Esto asegura que el padding no afecte el tamaño final del elemento */
-  }
-    
-  
-  

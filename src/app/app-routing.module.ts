@@ -9,6 +9,7 @@ import { SurveyComponent } from './survey/survey.component';
 import { Graph1Component } from './graph1/graph1.component';
 import { CarrouselComponent } from './carrousel/carrousel.component';
 import { CompanyEmailsComponent } from './company-emails/company-emails.component';
+import { Graph2Component } from './graph2/graph2.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent, canActivate: [AuthGuard]
+    component: DashboardComponent, canActivate: [AuthGuard],
   },
   {
     path : 'send_emails',

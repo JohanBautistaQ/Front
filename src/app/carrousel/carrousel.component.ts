@@ -1,3 +1,4 @@
+// carrousel.component.ts
 import { Component, OnInit } from '@angular/core';
 import { SurveyApiService } from '../survey/surveyApi.service';
 import { SurveyQuestion } from '../survey/surveyQuestion';
@@ -14,7 +15,16 @@ export class CarrouselComponent implements OnInit {
   constructor(private surveyApiService: SurveyApiService) { }
 
   ngOnInit() {
+    let tipos = ['TEXT','NUMERIC']
     this.surveyApiService.getAll().subscribe((data: SurveyQuestion[]) => {
+  
+      
+      for(let i = 0; i < data.length; i++){
+        let pregunta = data[i]
+        if(tipos.includes(pregunta.type_question) || pregunta.id==32){
+          data.splice(i,1);
+        }
+      }
       this.questions = data;
     }, (error: any) => {
       console.error('Error loading questions:', error);
@@ -30,5 +40,5 @@ export class CarrouselComponent implements OnInit {
       this.currentSlideIndex = (this.currentSlideIndex - 1 + this.questions.length) % this.questions.length;
     }
   }
-  
 }
+  

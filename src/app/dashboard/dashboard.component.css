@@ -10,7 +10,7 @@
 }
 
 #header .cards{
-    padding: 10% 0 0;
+    padding: 8% 0 0;
 }
 
 .navbar{
@@ -176,3 +176,24 @@
 /* #viewPrincipal .sidenote p{
     font-size: 1em;
 } */
+
+#graficaX{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#cardInfo { 
+    flex-grow: 0.5;
+    max-width: 50%;
+}
+
+#cardInfo h5{ 
+    font-weight: 800;
+}
+
+#graficaContainer{
+    flex-grow: 0.5;
+    max-width: 50%;
+}

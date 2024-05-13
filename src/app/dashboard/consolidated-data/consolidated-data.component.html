@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-between">
       <div>
         <span>Total respuestas</span>
-        <h3>{{ consolidatedSurveyMetrics.num_responses }} empleados</h3>
+        <h3>{{ consolidatedSurveyMetrics?.num_responses }} empleados</h3>
       </div>
     </div>
 
@@ -12,28 +12,28 @@
         <span class="icon-card"></span>
         <div>
           <h1>Puntaje promedio</h1>
-          <h2>{{ consolidatedSurveyMetrics.consolidated.score }}</h2>
+          <h2>{{ consolidatedSurveyMetrics?.consolidated?.score }}</h2>
         </div>
       </div>
       <div class="metric-card d-flex flex-column justify-content-between p-3">
         <span class="icon-card"></span>
         <div>
           <h1>Mejor puntaje</h1>
-          <h2>{{ consolidatedSurveyMetrics.highest_score }}</h2>
+          <h2>{{ consolidatedSurveyMetrics?.highest_score }}</h2>
         </div>
       </div>
       <div class="metric-card d-flex flex-column justify-content-between p-3">
         <span class="icon-card"></span>
         <div>
           <h1>Peor puntaje</h1>
-          <h2>{{ consolidatedSurveyMetrics.lowest_score }}</h2>
+          <h2>{{ consolidatedSurveyMetrics?.lowest_score }}</h2>
         </div>
       </div>
       <div class="metric-card d-flex flex-column justify-content-between p-3">
         <span class="icon-card"></span>
         <div>
           <h1>Riesgo</h1>
-          <h2>{{ consolidatedSurveyMetrics.risk }}</h2>
+          <h2>{{ consolidatedSurveyMetrics?.risk }}</h2>
         </div>
       </div>
     </div>
