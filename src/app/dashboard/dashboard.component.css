@@ -82,11 +82,11 @@
 }
 
 #viewPrincipal #grafica{
-    flex-grow: 0.6;
+    flex-grow: 1;
 }
 
 #viewPrincipal #sideNote {
-    flex-grow: 0.4;
+    flex-grow:1;
     display: inline-block;
     background-color: #000028;
     padding: 2em;
