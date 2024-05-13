@@ -15,6 +15,7 @@ import { CarrouselComponent } from './carrousel/carrousel.component';
 import { CommonModule } from '@angular/common';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { CompanyEmailsComponent } from './company-emails/company-emails.component';
+import { CompanyEmailsModule } from './company-emails/company-emails.module';
 
 @NgModule({
   declarations: [						
@@ -31,6 +32,7 @@ import { CompanyEmailsComponent } from './company-emails/company-emails.componen
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    CompanyEmailsModule,
     DashboardModule,
     ToastrModule.forRoot({
       timeOut: 10000,

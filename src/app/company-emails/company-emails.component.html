@@ -1,1 +1,45 @@
-<p>company-emails works!</p>
+<form [formGroup]="newEmailData" (ngSubmit)="onAddEmail()">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Correo</label>
+    <input
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      formControlName="email"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="companyArea" class="form-label">Area</label>
+    <input
+      type="text"
+      class="form-control"
+      id="companyArea"
+      formControlName="area"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Add</button>
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Dirección de correo</th>
+      <th scope="col">Área</th>
+      <th scope="col">Ultima vez que llenó la encuesta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let email of addedEmails">
+      <td>{{ email.email }}</td>
+      <td>{{ email.area }}</td>
+      <td>{{ email.last_email_sent }}</td>
+    </tr>
+    <tr *ngFor="let email of companyEmails">
+      <td>{{ email.email }}</td>
+      <td>{{ email.area }}</td>
+      <td>{{ email.last_email_sent }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button (click)="sendEmails()" class="btn-primary btn">Send emails</button>
