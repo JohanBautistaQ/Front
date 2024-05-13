@@ -14,84 +14,78 @@ export class SurveyComponent implements OnInit {
   totalScore = 0; 
   isGoodScore = false; 
   surveyScore = 0;
+  respondent = "";
+  survey_consolidated = null;
 
   constructor(private surveyService: SurveyApiService ) {  }
+  
+  ngOnInit() {
+    this.getQuestions();  
+    this.allRespondents();
+  }
+
 
   getQuestions():void {
     this.surveyService.getAll().subscribe((questions) =>{
       this.questions = questions;
       this.getTotalScoreForQuestion(questions);
-      console.log(questions)
-      console.log(this.totalScore)
     });
   }
 
+  allRespondents():void{
+    this.surveyService.getRespondent().subscribe((respondentsId) =>{
+      this.respondent = respondentsId["employee_id"];
+      this.survey_consolidated = respondentsId["company_id"];
+    });
+  }
+
+  
   getTotalScoreForQuestion(questionsDict:any): void {
     let totalScore = 0;
-    for(const question in questionsDict){
-      // if (question.type_question === 'NUMERIC') {
-      //   const scoresSchema = question.question_config.scores_schema;
-      //   for (const key in scoresSchema) {
-      //     if (scoresSchema.hasOwnProperty(key)) {
-      //       console.log(scoresSchema[key])
-      //       totalScore += scoresSchema[key];
-      //     }
-      //   }
-      
-      // } else if (questionsDict.type_question === 'YES_NO') {
-      //   totalScore = questionsDict.question_config.yes_score + questionsDict.question_config.no_score;
-      // }
-
+    for (let question of questionsDict){
+      if (question.type_question === 'NUMERIC') {
+        const scoresSchema = question.question_config.scores_schema;
+        for (const key in scoresSchema) {
+          if (scoresSchema.hasOwnProperty(key)) {
+            totalScore += scoresSchema[key];
+          }
+        }
+      } else if (question.type_question === 'YES_NO') {
+        totalScore += question.question_config.yes_score + question.question_config.no_score;
+      }
     }
-    
-    console.log(totalScore)
+    console.log(totalScore);
     this.totalScore = totalScore;
   }
   
-
   updateQuestionResponse(questionId: number, selectedAnswer: any): void {
     const formDataAsObject = {  // Crear un objeto con los datos del formData
-      respondent: '3da84f5b-b6dc-45cc-8e53-4e6c89ad4a11',
-      survey_consolidated: '1',
+      respondent: this.respondent ,
+      survey_consolidated: "3" ,
       survey_question: questionId,
-      comment: 'sapo',
+      comment: '|',
       answer: selectedAnswer,
     };
     console.log(formDataAsObject);  
-
     this.questionResponses.push(formDataAsObject); 
     console.log('Arreglo de respuestas:', this.questionResponses); 
-    
-
-
+  
   }
 
   onSubmit(): void {
-    console.log(this.questionResponses)
-
+    console.log(this.questionResponses);
     console.log('Formulario enviado:', this.questionResponses);
-    // Llama al método en el servicio para enviar las respuestas
     this.surveyService.sendResponses(this.questionResponses).subscribe(
       response => {
         console.log('Respuestas enviadas con éxito:', response);
-        // Agrega aquí cualquier acción adicional después de enviar las respuestas
-
         for (const item of response) {
-          this.surveyScore += item.score; // Sumar el score de cada objeto al total
+          this.surveyScore += item.score; 
         }
         this.isGoodScore = this.surveyScore > (this.totalScore / 2);
-
       },
       error => {
         console.error('Error al enviar las respuestas:', error);
-        // Agrega aquí manejo de errores si es necesario
       }
     );
-  }
-
-    
-  ngOnInit() {
-    this.getQuestions();  
-   
-  }
+ }
 }

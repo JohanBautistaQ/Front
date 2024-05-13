@@ -4,6 +4,8 @@ import { DashboardComponent } from './dashboard.component';
 import { ConsolidatedDataComponent } from './consolidated-data/consolidated-data.component';
 import { DashboardService } from './dashboard.service';
 import { AdminModule } from '../admin/admin.module';
+import { Graph1Module } from '../graph1/graph1.module';
+
 
 
 @NgModule({
@@ -12,10 +14,11 @@ import { AdminModule } from '../admin/admin.module';
     ConsolidatedDataComponent
   ],
   imports: [
-    CommonModule, AdminModule
+    CommonModule, AdminModule, Graph1Module
   ],
   providers: [
     
   ],
+  exports: []
 })
 export class DashboardModule { }

@@ -18,7 +18,7 @@ login(credentials: FormGroup) {
       this.toastr.success('Login successful!', 'Status');
       localStorage.setItem('isLoggedIn', 'true');  // Almacenar un indicador de sesión
       this.router.navigate(['/dashboard']);  // Navegar al Dashboard
-      
+      localStorage.setItem('id', response.id);  // Almacenar un indicador de sesión
     },
     error: (error: any) => this.toastr.error('Invalid user', 'Status'),
   });
@@ -26,7 +26,9 @@ login(credentials: FormGroup) {
 
 logout() {
   localStorage.removeItem('isLoggedIn');  // Limpiar el indicador al cerrar sesión
+  localStorage.removeItem('id');
   this.router.navigate(['/login']);  // Navegar al login
+
   // Manejar la lógica de logout
 }
 
