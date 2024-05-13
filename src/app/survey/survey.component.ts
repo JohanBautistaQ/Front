@@ -61,7 +61,7 @@ export class SurveyComponent implements OnInit {
   updateQuestionResponse(questionId: number, selectedAnswer: any): void {
     const formDataAsObject = {  // Crear un objeto con los datos del formData
       respondent: this.respondent ,
-      survey_consolidated: "3" ,
+      survey_consolidated: "3",
       survey_question: questionId,
       comment: '|',
       answer: selectedAnswer,
