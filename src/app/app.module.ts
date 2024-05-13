@@ -20,8 +20,7 @@ import { CompanyEmailsComponent } from './company-emails/company-emails.componen
   declarations: [						
     AppComponent,
       SurveyComponent,
-      LoginComponent,
-      CompanyEmailsComponent
+      LoginComponent
    ],
   imports: [
     CommonModule,

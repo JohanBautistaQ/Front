@@ -8,6 +8,7 @@ import { AdminComponent } from './admin/admin.component';
 import { SurveyComponent } from './survey/survey.component';
 import { Graph1Component } from './graph1/graph1.component';
 import { CarrouselComponent } from './carrousel/carrousel.component';
+import { CompanyEmailsComponent } from './company-emails/company-emails.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
     component: DashboardComponent, canActivate: [AuthGuard]
   },
   {
+    path : 'send_emails',
+    component: CompanyEmailsComponent, canActivate: [AuthGuard]
+  },
+  {
     path: 'survey',
     component: SurveyComponent, canActivate: [AuthGuard]
   },
@@ -28,7 +33,8 @@ const routes: Routes = [
   },
   {
     path: 'carro',component: CarrouselComponent, canActivate: [AuthGuard]
-  }
+  },
+
 
 ];
 

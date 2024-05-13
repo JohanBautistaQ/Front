@@ -13,10 +13,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {}
 
   logout() {
-<<<<<<< HEAD
-    
-=======
     this.authService.logout();
->>>>>>> 608fcde0d70c654ff455a6c0fea76dcfd915aa24
   }
 }

@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CompanyEmailsComponent } from './company-emails.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [CompanyEmailsComponent],
   imports: [
     CommonModule
   ]
