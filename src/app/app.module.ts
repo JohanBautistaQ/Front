@@ -13,14 +13,23 @@ import { Graph1Component } from './graph1/graph1.component';
 import { ChartsModule } from 'ng2-charts';
 import { CarrouselComponent } from './carrousel/carrousel.component';
 import { CommonModule } from '@angular/common';
-import { DashboardModule } from './dashboard/dashboard.module';
 import { CompanyEmailsComponent } from './company-emails/company-emails.component';
+import { AdminComponent } from './admin/admin.component';
+import { ConsolidatedDataComponent } from './dashboard/consolidated-data/consolidated-data.component';
+import { Graph2Component } from './graph2/graph2.component';
 
 @NgModule({
-  declarations: [						
+  declarations: [							
     AppComponent,
-      SurveyComponent,
-      LoginComponent
+    SurveyComponent,
+    LoginComponent,
+    Graph1Component,
+    DashboardComponent,
+    AdminComponent,
+    ConsolidatedDataComponent,
+    CarrouselComponent,
+    CompanyEmailsComponent,
+    Graph2Component
    ],
   imports: [
     CommonModule,
@@ -31,7 +40,6 @@ import { CompanyEmailsComponent } from './company-emails/company-emails.componen
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    DashboardModule,
     ToastrModule.forRoot({
       timeOut: 10000,
       positionClass: 'toast-bottom-right',

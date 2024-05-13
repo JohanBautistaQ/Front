@@ -7,29 +7,29 @@ import { ResponseQuestion } from './responseQuestion';
 import {Chart} from 'chart.js';
 
 @Component({
-  selector: 'app-graph1',
-  templateUrl: './graph1.component.html'
+  selector: 'app-graph2',
+  templateUrl: './graph2.component.html'
 })
-export class Graph1Component implements OnInit {
+export class Graph2Component implements OnInit {
   @Input() data: any;
-  public graph1: any;
+  public graph2: any;
 
   constructor(private http: HttpClient, private toastr: ToastrService) {}
 
   ngOnInit(): void {
+    console.log(this.data)
     this.getData();
   }
 
 
   consolidated!: number;
   response: Array<ResponseQuestion> = [];
-  graph1Label = "Conteo";
-  graph1Type: ChartType = 'bar';
-  graph1Labels: Set<any> = new Set();
-  graph1Data: Array<number> = []
+  graph2Label = "Conteo";
+  graph2Type: ChartType = 'bar';
+  graph2Labels: Set<any> = new Set();
+  graph2Data: Array<number> = []
   type: any
   backgroundColor:any
-  options = {}
 
   getData(){
     this.http.get('http://34.27.189.110:8080/survey_consolidated_metrics/1/').subscribe({
@@ -60,8 +60,8 @@ export class Graph1Component implements OnInit {
     let numberYes = 0
     let numberNo = 0
     let total = 0
-    this.graph1Labels.add('yes')
-      this.graph1Labels.add('no')
+    this.graph2Labels.add('yes')
+      this.graph2Labels.add('no')
     for(let responseSurvey of response){
       let answer = responseSurvey.answer.toLowerCase();
       if(answer.includes('yes')){ 
@@ -70,20 +70,11 @@ export class Graph1Component implements OnInit {
         numberNo +=1;
       }
     }
-    this.graph1Data.push(numberYes);
-    this.graph1Data.push(numberNo);
+    this.graph2Data.push(numberYes);
+    this.graph2Data.push(numberNo);
     total = numberYes + numberNo;
     this.type = 'bar';
     this.backgroundColor = 'rgba(54, 162, 235, 0.5)'
-    this.options = {
-      scales: {
-        yAxes: [{
-          ticks: {
-              beginAtZero: true
-          }
-      }]
-      }
-    }
   }
 
     
@@ -99,8 +90,8 @@ export class Graph1Component implements OnInit {
     }
 
     
-    this.graph1Labels = this.data.question_config.options;
-    this.graph1Data = Object.values(conteo);
+    this.graph2Labels = this.data.question_config.options;
+    this.graph2Data = Object.values(conteo);
     this.type = 'doughnut';
     this.backgroundColor = [
     'rgb(255, 99, 132)',
@@ -114,22 +105,29 @@ export class Graph1Component implements OnInit {
   }
 
   createGraph(){
-    this.graph1 = new Chart("graph1",{
+    this.graph2 = new Chart("graph1",{
       type: this.type,
 
       data: {
-        labels: Array.from(this.graph1Labels.values()),
+        labels: Array.from(this.graph2Labels.values()),
 
         datasets: [
           {
             label:"Conteo",
-            data: this.graph1Data,
+            data: this.graph2Data,
             backgroundColor: this.backgroundColor,
           }
         ]
       },
-      options: this.options
-      
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+        }
+      }
     });
   }
 

@@ -30,15 +30,15 @@
         <button type="button" (click)="logout()">LOGOUT</button>
       </div>
     </nav>
+    <div class="cards">
+      <app-consolidated-data></app-consolidated-data>
+    </div>
   </header>
-  <app-consolidated-data></app-consolidated-data>
+
   <section id="viewPrincipal">
     <div id="resumen">
       <div id="grafica">
-        <h1>Pregunta 1</h1>
         <app-carrousel></app-carrousel>
-
-        <!-- <app-graph1></app-graph1> -->
       </div>
       <div class="side">
         <div class="sidenote">
@@ -65,7 +65,22 @@
       </div>
     </div>
     <div id="pregunta">
-      <h1>Pregunta X</h1>
+      <h5>{{ pregunta }}</h5>
+      <div id="graficaX">
+        <div id="graficaContainer">
+          <app-graph2 [data]="data"></app-graph2>
+        </div>
+
+        <div id="cardInfo">
+          <h5>Interpretacion generada por IA</h5>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio
+            mollitia vitae quod maiores similique illum aspernatur temporibus,
+            est dignissimos rerum ex, fugiat eos sed officiis harum beatae quasi
+            repudiandae nulla.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 </div>
