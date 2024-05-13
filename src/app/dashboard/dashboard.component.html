@@ -1,7 +1,7 @@
 <div class="login-wrapper">
   <header id="header">
-    <nav class="navbar navbar-expand-md container-md px-5 pt-4">
-      <div class="navbar-brand">
+    <nav class="navbar">
+      <div>
         <svg
           class="siteHeader__primaryLogo"
           xmlns="http://www.w3.org/2000/svg"
@@ -22,36 +22,12 @@
           ></path>
         </svg>
       </div>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div
-        class="collapse navbar-collapse justify-content-end"
-        id="navbarSupportedContent"
-      >
-        <ul id="links" class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="/about">ABOUT</a></li>
-          <li class="nav-item">
-            <a class="nav-link" href="/whatwedo">WHAT WE DO</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/resources">RESOURCES</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="/news">NEWS</a></li>
-          <li class="nav-item">
-            <button class="nav-link" type="button" (click)="logout()">
-              LOGOUT
-            </button>
-          </li>
-        </ul>
+      <div id="links">
+        <a href="/about">ABOUT</a>
+        <a href="/whatwedo">WHAT WE DO</a>
+        <a href="/resources">RESOURCES</a>
+        <a href="/news">NEWS</a>
+        <button type="button" (click)="logout()">LOGOUT</button>
       </div>
     </nav>
     <section></section>
@@ -82,4 +58,7 @@
     </div>
   </section>
 </div>
+
+<p>dashboard works!</p>
+
 <app-consolidated-data></app-consolidated-data>
