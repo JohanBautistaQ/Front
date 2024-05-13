@@ -77,7 +77,7 @@ export class Graph1Component implements OnInit{
           {
             label:"Conteo",
             data: this.graph1Data,
-            backgroundColor: 'cyan'
+            backgroundColor: 'rgba(54, 162, 235, 0.5)',
           }
         ]
       },
