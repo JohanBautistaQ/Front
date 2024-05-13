@@ -83,21 +83,31 @@
     max-width: 70%;
 }
 
-#viewPrincipal #sideNote {
+
+
+#viewPrincipal .side {
     flex-grow:1;
     display: inline-block;
-    background-color: #000028;
+    /* background-color: #000028; */
     padding: 2em;
     border-radius: 8px;
     width: 0.5%;
+}
+
+#viewPrincipal .side .sidenote {
+    background-color: #000028;
     color: white;
+    padding: 2em;
     text-decoration: none;
     text-align: start;
     line-height: 1.5em;
+    border-radius: 8px;
     overflow: hidden;
+    height: 70%;
+    margin-bottom: 1em;
 }
 
-#viewPrincipal #sideNote button {
+#viewPrincipal .sidenote button {
     color: black;
     font-weight: 800;
     font-size: small;
@@ -108,37 +118,37 @@
     margin-top: 5em;
 }
 
-#viewPrincipal #sideNote button:hover {
+#viewPrincipal .sidenote button:hover {
     cursor: pointer;
     background-color: #dc9049;
     transition: all 150ms ease-in-out;
 }
 
-#viewPrincipal #sideNote i {
+#viewPrincipal .sidenote i {
     font-size: 4em;
 
 }
 
 
-#viewPrincipal #sideNote h1 {
+#viewPrincipal .sidenote h1 {
     color: #ffcc2b;
     font-size: 4em;
     margin: 0.4em 0 0.4em;
 
 }
 
-#viewPrincipal #sideNote p {
+#viewPrincipal .sidenote p {
     margin: 0.2em 0 0.2em;
     font-size: 1em;
 
 }
 
-#viewPrincipal #sideNote p:nth-child(2) {
+#viewPrincipal .sidenote p:nth-child(2) {
     font-size: x-large;
 
 }
 
-#viewPrincipal #sideNote p:nth-child(5) {
+#viewPrincipal .sidenote p:nth-child(5) {
     font-weight: 0%;
     color: #7a7a8e;
 }

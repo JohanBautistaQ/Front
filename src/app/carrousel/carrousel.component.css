@@ -8,7 +8,7 @@
   }
   
   #grafica {
-    min-height: 300px; /* Asegura que el área del gráfico tenga suficiente espacio */
+    min-height: 800px; /* Asegura que el área del gráfico tenga suficiente espacio */
   }
   
   
@@ -35,10 +35,11 @@
   }
 
   .carousel-item h5 {
-    font-size: 1.5rem;  /* Tamaño uniforme para los títulos */
+    font-size: 1.2em;  /* Tamaño uniforme para los títulos */
     overflow: hidden;  /* Oculta texto que excede el área visible */
     text-overflow: ellipsis;  /* Añade puntos suspensivos si el texto es demasiado largo */
      /* Mantiene el texto en una sola línea */
+    text-align: start;
   }
 
   #resumen {
