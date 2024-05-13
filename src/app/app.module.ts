@@ -14,12 +14,14 @@ import { ChartsModule } from 'ng2-charts';
 import { CarrouselComponent } from './carrousel/carrousel.component';
 import { CommonModule } from '@angular/common';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { CompanyEmailsComponent } from './company-emails/company-emails.component';
 
 @NgModule({
   declarations: [						
     AppComponent,
       SurveyComponent,
-      LoginComponent
+      LoginComponent,
+      CompanyEmailsComponent
    ],
   imports: [
     CommonModule,
