@@ -1,5 +1,45 @@
-<p>dashboard works!</p>
+<div class="login-wrapper">
+  <header id="header">
+    <nav class="navbar">
+      <div>
+        <h1>Logo</h1>
+      </div>
+      <div id="links">
+        <a href="/about">ABOUT</a>
+        <a href="/whatwedo">WHAT WE DO</a>
+        <a href="/resources">RESOURCES</a>
+        <a href="/news">NEWS</a>
+        <button type="button" (click)="logout()">LOGOUT</button>
+      </div>
+    </nav>
+    <section></section>
+  </header>
 
-<button type="button" (click)="logout()">Logout</button>
+  <section id="viewPrincipal">
+    <div id="resumen">
+      <div id="grafica">
+        <h1>Pregunta 1</h1>
+      </div>
+      <div id="sideNote">
+        <i class="material-icons">description</i>
+        <p>En total</p>
+        <h1>37%</h1>
+        <p>De los empleados encuestados</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+          doloremque dignissimos, repellat itaque eligendi est ipsum error
+          porro.
+        </p>
+
+        <button>Solucionar</button>
+      </div>
+    </div>
+    <div id="pregunta">
+      <h1>Pregunta X</h1>
+    </div>
+  </section>
+</div>
+
+<p>dashboard works!</p>
 
 <app-admin></app-admin>
