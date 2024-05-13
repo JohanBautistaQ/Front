@@ -14,18 +14,23 @@ import { LoginComponent } from './login/login.component';
 import { SurveyApiService } from './survey/surveyApi.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminComponent } from './admin/admin.component';
-
+import { Graph1Component } from './graph1/graph1.component';
+import { ChartsModule } from 'ng2-charts';
+import { CarrouselComponent } from './carrousel/carrousel.component';
 
 @NgModule({
-  declarations: [					
+  declarations: [						
     AppComponent,
       SurveyComponent,
       LoginComponent,
       DashboardComponent,
-      AdminComponent
+      AdminComponent,
+      Graph1Component,
+      CarrouselComponent
    ],
   imports: [
     BrowserModule,
+    ChartsModule,
     AppRoutingModule,
     FormsModule, 
     ReactiveFormsModule,
