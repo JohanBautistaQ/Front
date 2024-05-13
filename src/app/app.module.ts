@@ -35,7 +35,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
       timeOut: 10000,
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
-    })
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
