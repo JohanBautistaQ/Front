@@ -5,6 +5,7 @@ import { ConsolidatedDataComponent } from './consolidated-data/consolidated-data
 import { DashboardService } from './dashboard.service';
 import { AdminModule } from '../admin/admin.module';
 import { Graph1Module } from '../graph1/graph1.module';
+import { CarrouselModule } from '../carrousel/carrousel.module';
 
 
 
@@ -14,7 +15,7 @@ import { Graph1Module } from '../graph1/graph1.module';
     ConsolidatedDataComponent
   ],
   imports: [
-    CommonModule, AdminModule, Graph1Module
+    CommonModule, AdminModule, Graph1Module, CarrouselModule
   ],
   providers: [
     

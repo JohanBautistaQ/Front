@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { SurveyComponent } from './survey/survey.component';
 import { Graph1Component } from './graph1/graph1.component';
+import { CarrouselComponent } from './carrousel/carrousel.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,9 @@ const routes: Routes = [
   { path: 'fundation',component: AdminComponent, canActivate: [AuthGuard]}, 
   {
     path: 'graph1',component: Graph1Component, canActivate: [AuthGuard]
+  },
+  {
+    path: 'carro',component: CarrouselComponent, canActivate: [AuthGuard]
   }
 
 ];

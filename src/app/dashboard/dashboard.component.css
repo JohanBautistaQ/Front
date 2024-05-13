@@ -58,6 +58,8 @@
 
 #viewPrincipal #grafica{
     flex-grow: 1;
+    margin-right: 5%;
+    max-width: 70%;
 }
 
 #viewPrincipal #sideNote {
@@ -106,6 +108,7 @@
 
 #viewPrincipal #sideNote p {
     margin: 0.2em 0 0.2em;
+    font-size: 1em;
 
 }
 
