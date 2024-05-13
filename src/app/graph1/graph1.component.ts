@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild,Input } from '@angular/core';
 import { ChartOptions, ChartType } from 'chart.js';
 import { Label, SingleDataSet } from 'ng2-charts';
 import { ToastrService } from 'ngx-toastr';
@@ -11,6 +11,7 @@ import {Chart} from 'chart.js';
   templateUrl: './graph1.component.html'
 })
 export class Graph1Component implements OnInit{
+  @Input() data: any;
   public barChartOptions: ChartOptions = {
     responsive: true
   };
