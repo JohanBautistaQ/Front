@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { ConsolidatedDataComponent } from './consolidated-data/consolidated-data.component';
 import { DashboardService } from './dashboard.service';
+import { AdminModule } from '../admin/admin.module';
 
 
 @NgModule({
@@ -11,7 +12,7 @@ import { DashboardService } from './dashboard.service';
     ConsolidatedDataComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, AdminModule
   ],
   providers: [
     

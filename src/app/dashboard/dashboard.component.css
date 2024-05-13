@@ -1,0 +1,46 @@
+#header {
+    background-color: #000028;
+    position: relative;
+
+}
+
+
+.navbar #links {
+    display: flex;
+    flex-grow: 0.5;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.navbar #links button{
+    color: black;
+    font-weight: 800;
+    font-size: small;
+    border: none;
+    padding: 1em 2.5em;
+    background-color: #ffcc2b;
+}
+
+.navbar #links button:hover{
+    cursor: pointer;
+    background-color: #dc9049;
+    transition: all 150ms ease-in-out;
+}
+
+
+.navbar a, .navbar h1{
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.navbar a {
+    font-size: small;
+}
+
+
+.navbar a:hover{
+    color: #dc9049;
+    transition: all 150ms ease-in-out;
+}

@@ -1,0 +1,80 @@
+<!-- survey.component.html -->
+
+<div *ngIf="questions.length > 0">
+  <h1>Lista de Preguntas</h1>
+  <form  (ngSubmit)="onSubmit()">
+    <ul>
+      <li *ngFor="let question of questions">
+        <h3>{{ question.statement }}</h3>
+        <div *ngIf="question.type_question === 'NUMERIC'">
+          <div
+            *ngFor="
+              let keyValuePair of question.question_config.scores_schema
+                | keyvalue
+            "
+          >
+            <label>
+              <input type="radio" [name]="question.id.toString()"  
+              [value]="keyValuePair.key"
+              (change)="updateQuestionResponse(question.id, keyValuePair.key)">
+              {{ keyValuePair.key }}
+            </label>
+          </div>
+
+        </div>
+        <div *ngIf="question.type_question === 'PERCENTAGE'">
+          <!-- Contenido específico para preguntas de porcentaje -->
+          <p>
+            Configuración de la pregunta:
+            {{ question.question_config.scores_schema | json }}
+          </p>
+        </div>
+        <div *ngIf="question.type_question === 'SELECT'">
+          <!-- Contenido específico para preguntas de selección -->
+          <p>
+            Configuración de la pregunta:
+            {{ question.question_config.scores_schema | json }}
+          </p>
+        </div>
+        <div *ngIf="question.type_question === 'TEXT'">
+          <!-- Contenido específico para preguntas de texto -->
+          <p>
+            Configuración de la pregunta:
+            {{ question.question_config.scores_schema | json }}
+          </p>
+        </div>
+
+        <div *ngIf="question.type_question === 'YES_NO'">
+          <!-- Contenido específico para preguntas de sí/no -->
+          <div *ngFor="let keyValuePair of question.question_config | keyvalue">
+           
+            <label>
+              <input type="radio" id="score2" [name]="question.id.toString()"  [value]="keyValuePair.key"
+              (change)="updateQuestionResponse(question.id, keyValuePair.key)"
+              >
+              {{ keyValuePair.key === 'yes_score' ? 'Sí' : keyValuePair.key === 'no_score' ? 'No' : keyValuePair.key }}
+            </label>
+          </div>
+
+        </div>
+      </li>
+    </ul>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div *ngIf="totalScore > 0">
+    <p>La suma total de scores es: {{ totalScore }}</p>
+    <div *ngIf="isGoodScore">
+      <p>¡Es un buen score!</p>
+    </div>
+    <div *ngIf="!isGoodScore">
+      <p>Es un mal score.</p>
+    </div>
+  </div>
+
+
+</div>
+  
+
+
+  
