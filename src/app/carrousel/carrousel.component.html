@@ -1,21 +1,14 @@
+<!-- carrousel.component.html -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
-    <li
-      *ngFor="let question of questions; let i = index"
-      [class.active]="i === currentSlideIndex"
-      (click)="moveSlide(i)"
-    ></li>
+    <li *ngFor="let question of questions; let i = index" [class.active]="i === currentSlideIndex" (click)="moveSlide(i)"></li>
   </ol>
   <div class="carousel-inner">
-    <div
-      *ngFor="let question of questions; let i = index"
-      class="carousel-item"
-      [class.active]="i === currentSlideIndex"
-    >
+    <div *ngFor="let question of questions; let i = index" class="carousel-item" [class.active]="i === currentSlideIndex">
       <div class="d-flex justify-content-center align-items-center">
         <div class="text-center">
           <h5>{{ question.statement }}</h5>
-          <app-graph1 [data]="question"></app-graph1>
+          <app-graph1 [data]="question" *ngIf="i === currentSlideIndex"></app-graph1>
         </div>
       </div>
     </div>

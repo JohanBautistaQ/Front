@@ -10,16 +10,15 @@ import {Chart} from 'chart.js';
   selector: 'app-graph1',
   templateUrl: './graph1.component.html'
 })
-export class Graph1Component implements OnInit{
+export class Graph1Component implements OnInit {
   @Input() data: any;
-  public barChartOptions: ChartOptions = {
-    responsive: true
-  };
+  public graph1: any;
 
-  
+  constructor(private http: HttpClient, private toastr: ToastrService) {}
 
-  constructor(private http: HttpClient, private toastr: ToastrService){}
-  public graph1: any
+  ngOnInit(): void {
+    this.getData();
+  }
 
 
   consolidated!: number;
@@ -93,7 +92,5 @@ export class Graph1Component implements OnInit{
     });
   }
 
-  ngOnInit(): void {
-    this.getData();
-  }
+  
 }

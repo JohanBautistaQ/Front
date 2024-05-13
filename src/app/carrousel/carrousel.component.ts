@@ -1,3 +1,4 @@
+// carrousel.component.ts
 import { Component, OnInit } from '@angular/core';
 import { SurveyApiService } from '../survey/surveyApi.service';
 import { SurveyQuestion } from '../survey/surveyQuestion';
@@ -30,5 +31,5 @@ export class CarrouselComponent implements OnInit {
       this.currentSlideIndex = (this.currentSlideIndex - 1 + this.questions.length) % this.questions.length;
     }
   }
-  
 }
+  
