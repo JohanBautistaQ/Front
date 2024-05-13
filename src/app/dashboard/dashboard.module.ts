@@ -8,7 +8,6 @@ import { Graph1Module } from '../graph1/graph1.module';
 import { CarrouselModule } from '../carrousel/carrousel.module';
 
 
-
 @NgModule({
   declarations: [
     DashboardComponent, 

@@ -1,7 +1,28 @@
-#header {
-    background-color: #000028;
-    position: relative;
 
+.login-wrapper {
+    font-family: "Roboto", sans-serif;
+}
+
+#header {
+    padding:0 0 0;
+    background-color: #000028;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+}
+
+.navbar{
+    background-color: #000028;
+    padding: 2% 10% 2%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: space-between;
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%; */
+    overflow: hidden;
+    
 }
 
 

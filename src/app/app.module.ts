@@ -37,7 +37,7 @@ import { CompanyEmailsComponent } from './company-emails/company-emails.componen
       timeOut: 10000,
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
-    })
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
