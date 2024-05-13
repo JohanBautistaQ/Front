@@ -15,7 +15,8 @@ export class ConsolidatedDataComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
   ngOnInit(): void {
-    const id = this.route.snapshot.params['id'];
+    const idValue = localStorage.getItem('id');
+    const id = parseInt(idValue || '0');  // Usa '0' como valor predeterminado
     this.dashboardService.getConsolidatedMetrics(id).subscribe((data) => {
       data.consolidated.score = Number(data.consolidated.score.toFixed(2));
       data.highest_score = Number(data.highest_score.toFixed(2));
